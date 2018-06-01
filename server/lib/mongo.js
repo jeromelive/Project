@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://adminUser:Qiannaijia-11@120.77.178.106:27017/Database?authSource=admin');
+mongoose.connect('mongodb://adminUser:Qiannaijia-11@localhost:27017/Database?authSource=admin');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'coonnection error:'));
 db.once('open', (callback) => {

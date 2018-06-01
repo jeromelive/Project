@@ -8,7 +8,9 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', async (req, res, next) => {
+  console.log('/login start');
   let bool = await user.create(req.body);
+  console.log('/login stop');
   if(bool) {
     res.send({
       status: 200,

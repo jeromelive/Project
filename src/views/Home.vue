@@ -29,7 +29,11 @@ export default {
     async submit() {
       let res = await request({
         url: '/login',
-        method: 'POST'
+        method: 'POST',
+        data: {
+          phone: this.phone,
+          password: this.password
+        }
       });
       console.log(res);
     }
