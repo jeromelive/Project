@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "www-dev": "set NODE_ENV=dev && node ./server/bin/www",
+    "www-pro": "set NODE_ENV=pro && node ./server/bin/www"
   },
   "dependencies": {
     "axios": "^0.18.0",
