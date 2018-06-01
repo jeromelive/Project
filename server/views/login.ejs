@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      body {padding: 50px;font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;}
+    </style>
+  </head>
+  <body>
+    <h1>注册</h1>
+    <div>
+      <div>
+        <lable for="phone">手机号码</lable>
+        <input id="phone" type="tel" maxlength="11" placeholder="请输入手机号码" />
+      </div>
+      <div>
+        <lable for="pwd">密码</lable>
+        <input id="password" type="password" placeholder="请输入密码" />
+      </div>
+      <div>
+        <input type="submit" value="注册" onclick="submit()"/>
+      </div>
+    </div>
+
+    <script>
+      function submit() {
+        console.log(12312);
+        let ajax = new XMLHttpRequest();
+        ajax.open('POST','http://localhost:3000/login', true);
+        ajax.setRequestHeader('Content-Type', 'application/json');
+        ajax.onreadystatechange = function() {
+          if(ajax.readyState == 4) {
+            if(ajax.status === 200) {
+              console.log(1);
+            } else {
+              console.log(2);
+            }
+          }
+        }
+        ajax.send(JSON.stringify({
+          phone: document.getElementById('phone').value,
+          password: document.getElementById('password').value,
+        }));
+      }
+    </script>
+  </body>
+</html>

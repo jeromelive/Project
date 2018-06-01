@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      body {padding: 50px;font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;}
+    </style>
+  </head>
+  <body>
+    <h1>注册</h1>
+    <div>
+      <div>
+        <lable for="title">标题</lable>
+        <input id="title" type="text" placeholder="标题" />
+      </div>
+      <div>
+        <lable for="pwd">内容</lable>
+        <textarea id="content" name="" cols="30" rows="10"></textarea>
+      </div>
+      <div>
+        <input type="submit" value="注册" onclick="submit()"/>
+      </div>
+    </div>
+
+    <script>
+      function submit() {
+        console.log(12312);
+        let ajax = new XMLHttpRequest();
+        ajax.open('POST','http://localhost:3000/article', true);
+        ajax.setRequestHeader('Content-Type', 'application/json');
+        ajax.onreadystatechange = function() {
+          if(ajax.readyState == 4) {
+            if(ajax.status === 200) {
+              console.log(1);
+            } else {
+              console.log(2);
+            }
+          }
+        }
+        ajax.send(JSON.stringify({
+          title: document.getElementById('title').value,
+          content: document.getElementById('content').value,
+        }));
+      }
+    </script>
+  </body>
+</html>
