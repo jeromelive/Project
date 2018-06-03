@@ -1,0 +1,197 @@
+@import '@/assets/css/index.scss';
+
+.home {
+  background: url('../../assets/images/final-wood-tile.jpg');
+  background-attachment: fixed;
+  .home-header {
+    width: 100%;
+    background: #000;
+    color: $lblack;
+    @include flex;
+    overflow: hidden;
+    > img {
+      max-width: 100%;
+    }
+  }
+
+  .title {
+    font-size: 36px;
+    font-weight: 500;
+  }
+  .title-sub {
+    text-align: center;
+    margin-top: 10px;
+    color: #666;
+    font-size: 14px;
+  }
+
+  .story {
+    box-sizing: border-box;
+    background: rgba(256,256,256,.5);
+    .story-main {
+      padding: 50px 0 30px 130px;
+      max-width: 1440px;
+      margin: 0 auto;
+      .join-step {
+        margin-top: 15px;
+        margin-bottom: 30px; 
+        .el-step__icon-inner {
+          font-size: 20px !important;
+        }
+        .el-step__icon {
+          width: 40px;
+          height: 40px;
+        }
+        .el-step__line {
+          top: 20px;
+        }
+        .el-step__head.is-wait {
+          color: #B9B9AF;
+          border-color: #B9B9AF;
+          margin-bottom: 15px;
+        }
+        .el-step__title.is-wait {
+          font-size: 24px;
+          color: $black !important;
+          font-weight: 500;
+        }
+        .el-step__description.is-wait {
+          margin-top: 10px;
+          font-size: 16px;
+          color: $black !important;
+        }
+      }
+    }
+  }
+
+  .brand {
+    box-sizing: border-box;
+    padding-top: 100px;
+    .title {
+      text-align: center;
+    }
+    .carousel {
+      margin-top: 40px;
+    }
+    .el-carousel__item {
+      .el-carousel__mask {
+        display: none;
+      }
+      img {
+        width: 450px;
+        height: 450px;
+      }
+      .assets {
+        width: 450px;
+        margin: 30px auto 0;
+        .title {
+          font-size: 22px;
+        }
+        .separator {
+          width: 48px;
+          height: 4px;
+          background: #515252;
+          margin: 20px auto 0;
+        }
+        .detail {
+          margin-top: 20px;
+        }
+      }
+      .brand-enter-active {
+        transition: opacity .5s .5s;
+      }
+      .brand-leave-active {
+        transition: opacity 0;
+      }
+      .brand-enter /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+      }
+    }
+  }
+
+  .news {
+    background: #fff;
+    padding-top: 100px;
+    .title {
+      text-align: center;
+    }
+    .news-content {
+      margin-top: 20px;
+      padding: 0 10%;
+      .new-row:hover {
+        cursor: pointer;
+        margin-left: 100px;
+        .new-time {
+          .new-month, .new-year {
+            display: none;
+          }
+          img {
+            display: block !important;
+          }
+        }
+      }
+      .new-row {
+        width: 1440px;
+        // margin: 0 auto;
+        height: 180px;
+        overflow: hidden;
+        transition: all 1s;
+        .new-img {
+          height: 180px;
+          @include flex(center, center);
+          img {
+            max-width: 100%;
+           }
+        }
+        .new-content {
+          padding-left: 20px;
+          .new-title {
+            font-size: 24px;
+            margin: 20px 0;
+          }
+          .new-detail {
+            font-size: 14px;
+            color: #999;
+          }
+        }
+        .new-time {
+          text-align: right;
+          height: 100%;
+          @include flex(center, flex-end, column);
+          .new-month {
+            font-size: 48px;
+            color: #666;
+          }
+          .new-year {
+            font-size: 18px;
+            color: #999;
+          }
+          img {
+            display: none;
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+    }
+    .new-more:hover {
+      background: rgba(0,0,0,.05);
+      img {
+        opacity: 1;
+        margin-left: -10px;
+      }
+    }
+    .new-more {
+      cursor: pointer;
+      text-align: center;
+      height: 60px;
+      line-height: 60px;
+      img {
+        opacity: 0;
+        transform: scale(.5);
+        transition: all .5s;
+        margin-left: -30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+$theme: #E6A23C;
+$black: #303133;
+$lblack: #909399;
+
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
